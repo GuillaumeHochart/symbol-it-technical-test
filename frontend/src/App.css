@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.rpv-core__viewer rpv-core__viewer--light {
+  height: 500px!important;
+}
+
+.symbol-dispose{
+  padding: 2%;
+}
+
+.App-header {
+  background-color: #2a3b4e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgb(0 0 0 / 40%) 0px 0px 16px 0px;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#00567a;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
