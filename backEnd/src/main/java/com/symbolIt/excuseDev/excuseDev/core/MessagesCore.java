@@ -2,10 +2,12 @@ package com.symbolIt.excuseDev.excuseDev.core;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.symbolIt.excuseDev.excuseDev.dto.Message;
 import com.symbolIt.excuseDev.excuseDev.exception.BusinessException;
 import com.symbolIt.excuseDev.excuseDev.exception.NotFoundException;
 import com.symbolIt.excuseDev.excuseDev.model.MessagesResolver;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +34,10 @@ public class MessagesCore {
         if(result == null || result.length ==0) throw new NotFoundException("Not find messages");
 
         return Arrays.asList(result);
+    }
+    public List<Message> addMessage(Message message) throws BusinessException, NotFoundException {
+        if(message == null) throw new IllegalArgumentException("messag is null");
+        messages.add(new JSONObject(new Gson().toJson(message)));
+        return getMessages();
     }
 }

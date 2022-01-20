@@ -21,9 +21,6 @@ import java.util.List;
 public class MessagesApi {
 
     @Autowired
-    private MessagesResolver messages;
-
-    @Autowired
     private MessagesCore messagesCore;
 
     @GetMapping("/excuses")
@@ -33,7 +30,7 @@ public class MessagesApi {
     }
 
     @PostMapping(value = "/excuses", produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public JSONObject addMessage(@RequestBody JSONObject jsonObject){
-        return messages.add(jsonObject);
+    public List<Message> addMessage(@RequestBody Message message) throws BusinessException, NotFoundException {
+        return messagesCore.addMessage(message);
     }
 }
